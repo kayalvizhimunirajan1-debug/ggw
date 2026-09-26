@@ -1,0 +1,6 @@
+{
+  "name": "Little Sprouts Staff Board",
+  "description": "Kindergarten staff dashboard featuring the hold-by-default Sleeping-Bear Approval Gate, adaptive Resting Flower Bed interface, and real-time narrated announcements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

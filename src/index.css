@@ -1,0 +1,374 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-swanky {
+  font-family: 'Fontdiner Swanky', cursive, fantasy;
+}
+
+/* Whimsical animations */
+@keyframes float-cloud-slow {
+  0% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes float-cloud-fast {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes gentle-breathe {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+  }
+  50% {
+    transform: scale(1.025) translateY(-2px);
+  }
+}
+
+@keyframes gentle-snore {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6) rotate(-5deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(8px, -14px) scale(1) rotate(5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(16px, -28px) scale(1.3) rotate(12deg);
+  }
+}
+
+@keyframes sway-grass {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes dandelion-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(40px, -60px) rotate(90deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(80px, -130px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-breathe {
+  animation: gentle-breathe 4s ease-in-out infinite;
+}
+
+.animate-snore-1 {
+  animation: gentle-snore 3.2s ease-in-out infinite;
+}
+
+.animate-snore-2 {
+  animation: gentle-snore 3.2s ease-in-out infinite 1.1s;
+}
+
+.animate-snore-3 {
+  animation: gentle-snore 3.2s ease-in-out infinite 2.2s;
+}
+
+.animate-cloud-slow {
+  animation: float-cloud-slow 28s ease-in-out infinite;
+}
+
+.animate-cloud-fast {
+  animation: float-cloud-fast 18s ease-in-out infinite;
+}
+
+.animate-sway {
+  transform-origin: bottom center;
+  animation: sway-grass 5s ease-in-out infinite;
+}
+
+@keyframes bear-rollover {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  30% {
+    transform: rotate(-15deg) scale(0.95);
+  }
+  60% {
+    transform: rotate(20deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes bear-wakeup-stretch {
+  0% {
+    transform: scale(0.9) translateY(4px);
+  }
+  50% {
+    transform: scale(1.08) translateY(-4px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-bear-roll {
+  animation: bear-rollover 0.6s ease-in-out;
+}
+
+.animate-bear-wake {
+  animation: bear-wakeup-stretch 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pixel art rendering rule for crisp retro kindergarten arcade sprites */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Pixel Sun pulsing & gentle rays rotate */
+@keyframes pixel-sun-ray {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pixel-sun-bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.04);
+  }
+}
+
+.animate-pixel-sun-spin {
+  animation: pixel-sun-ray 40s linear infinite;
+}
+
+.animate-pixel-sun-bounce {
+  animation: pixel-sun-bounce 3.5s ease-in-out infinite;
+}
+
+/* Pixel Kids Running across the screen in the background */
+@keyframes kid-run-left-to-right {
+  0% {
+    transform: translateX(-120px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 120px));
+  }
+}
+
+@keyframes kid-run-right-to-left {
+  0% {
+    transform: translateX(calc(100vw + 120px)) scaleX(-1);
+  }
+  100% {
+    transform: translateX(-120px) scaleX(-1);
+  }
+}
+
+@keyframes kid-bobble {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-kid-run-1 {
+  animation: kid-run-left-to-right 16s linear infinite;
+}
+
+.animate-kid-run-2 {
+  animation: kid-run-left-to-right 19s linear infinite 5s;
+}
+
+.animate-kid-run-3 {
+  animation: kid-run-right-to-left 22s linear infinite 9s;
+}
+
+.animate-kid-run-4 {
+  animation: kid-run-left-to-right 25s linear infinite 13s;
+}
+
+.animate-kid-bobble {
+  animation: kid-bobble 0.4s steps(4) infinite;
+}
+
+/* Pixel Companion Bear Retro Animations */
+@keyframes pixel-bear-idle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pixel-heart-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) scale(0.6);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.9);
+  }
+}
+
+.animate-pixel-bear {
+  animation: pixel-bear-idle 1.4s steps(2) infinite;
+}
+
+.animate-pixel-heart {
+  animation: pixel-heart-float 0.9s steps(5) forwards;
+}
+
+
+/* Pixel Playground animations (Swing sway & Seesaw tilt) */
+@keyframes pixel-swing {
+  0%, 100% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes pixel-seesaw {
+  0%, 100% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes pixel-pinwheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pixel-swing {
+  transform-origin: top center;
+  animation: pixel-swing 2.4s ease-in-out infinite;
+}
+
+.animate-pixel-seesaw {
+  transform-origin: center center;
+  animation: pixel-seesaw 2.8s ease-in-out infinite;
+}
+
+.animate-pixel-pinwheel {
+  transform-origin: center center;
+  animation: pixel-pinwheel 4s linear infinite;
+}
+
+/* Custom scrollbar for kindergarten storybook warmth */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF7ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #FDBA74;
+  border-radius: 9999px;
+  border: 2px solid #FFF7ED;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FB923C;
+}
+
+/* Scroll-through fade in and out effects */
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-fade-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    black 24px,
+    black calc(100% - 24px),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    black 24px,
+    black calc(100% - 24px),
+    transparent 100%
+  );
+}
+
+@keyframes scroll-fade-in-up {
+  0% {
+    opacity: 0.15;
+    transform: translateY(14px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-fade-item {
+  animation: scroll-fade-in-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+/* Eye-soothing soft mode filter */
+.eye-soothing-active {
+  filter: sepia(0.06) brightness(0.98) contrast(0.97);
+  transition: filter 0.5s ease-in-out;
+}
+
